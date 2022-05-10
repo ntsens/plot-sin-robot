@@ -9,15 +9,16 @@ let a = 20
 let n = 20
 let x_offset = 100
 let y_offset = 100
+let z_offset = -42
 // 画坐标轴
 // 画x轴
-writingrobot.moveXYZ(x_offset - 10, y_offset, -42)
-writingrobot.moveXYZ(x_offset + 50, y_offset, -42)
+writingrobot.moveXYZ(x_offset - 10, y_offset, z_offset)
+writingrobot.moveXYZ(x_offset + 50, y_offset, z_offset)
 // 抬笔
 writingrobot.moveXYZ(x_offset, y_offset, 0)
 // 画y轴
-writingrobot.moveXYZ(x_offset, y_offset + 30, -42)
-writingrobot.moveXYZ(x_offset, y_offset - 30, -42)
+writingrobot.moveXYZ(x_offset, y_offset + 30, z_offset)
+writingrobot.moveXYZ(x_offset, y_offset - 30, z_offset)
 // 抬笔
 writingrobot.moveXYZ(x_offset, y_offset, 0)
 while (index <= n) {
@@ -26,7 +27,7 @@ while (index <= n) {
     x = x + x_offset
     y = y + y_offset
     basic.pause(300)
-    writingrobot.moveXYZunblock(x, y, -42)
+    writingrobot.moveXYZunblock(x, y, z_offset)
     index += 1
 }
 // 归位
